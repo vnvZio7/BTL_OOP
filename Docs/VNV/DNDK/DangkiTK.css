@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+.signup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    width: 100%;
+    height: auto;
+}
+
+.form_signup{
+    margin: 8% 20%;
+    border: 1px solid #ccc;
+}
+.logo{
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+.img_logo{
+    position: relative;
+    margin-left: 50%;
+    transform: translate(-50%,50%);
+}
+
