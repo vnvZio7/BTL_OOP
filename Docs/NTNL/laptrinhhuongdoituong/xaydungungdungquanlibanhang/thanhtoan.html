@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh toán - Shopee</title>
+    <link rel="stylesheet" href="thanhtoan.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Thanh toán</h1>
+        <form action="process_shipping.php" method="post">
+            <h2>Thông tin vận chuyển</h2>
+            <div class="form-group">
+                <label for="diaChi">Địa chỉ nhận hàng</label>
+                <input type="text" id="diaChi" name="diaChi" required>
+            </div>
+            <div class="form-group">
+                <label for="sanPham">Sản phẩm</label>
+                <input type="text" id="sanPham" name="sanPham" required>
+            </div>
+            <h2>Mã giảm giá</h2>
+            <div class="form-group">
+                <input type="text" id="voucher" name="voucher">
+                <button type="button" id="applyVoucher">Áp dụng</button>
+            </div>
+            <h2>Phương thức thanh toán</h2>
+            <div class="form-group">
+                <input type="radio" id="thenganhang" name="phuongThucThanhToan" value="thenganhang" required>
+                <label for="thenganhang">Thẻ ngân hàng</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" id="tindungghino" name="phuongThucThanhToan" value="tindungghino" required>
+                <label for="tindungghino">Thẻ Tín dụng/Ghi nợ</label>
+            </div>
+            <div class="form-group">
+                <input type="radio" id="thanhtoankhinhanhang" name="phuongThucThanhToan" value="thanhtoankhinhanhang" required>
+                <label for="thanhtoankhinhanhang">Tiền mặt</label>
+            </div>
+            <button type="submit">Xác nhận</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
