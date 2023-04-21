@@ -2,6 +2,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
+    color: black;
 }
 .main{
     position: fixed;
@@ -15,32 +16,117 @@
 .bgr{
     background-color: coral;
 }
-.form{
-    margin: 0 5%;
-}
 .logo_page{
     display: flex;
-    height: 50px;
-    width: auto;
+}
+.name{
+    padding-left: 10%;
+    font-size: 25px;
+    text-shadow: 2px 1px rgb(179, 79, 79);
 }
 
-ul{
-    display: flex;
-}
-
-.header_right_li{
-    padding-left: 20px;
-    cursor: pointer;
-}
 
 .toolbar{
     position: relative;
-    display: flex;
     background-color: rgb(225, 218, 208);
-    height: auto;
-    width: 100%;
+    height: 100vh;
+    width: 260px;
 }
+.form{
+    display: flex;
+    flex-direction:column;
+}
+.form_toolbar{
+    position: relative;
+    height: 100vh;
+}
+
+
+li{
+    height: 8%;
+    margin-right: 15%;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: 2px solid grey;
+    border-right: 2px solid grey;
+    border-radius: 5px;
+    margin-top: 15px;
+    box-shadow: 5px 5px 5px moccasin;
+}
+li:hover{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: azure;
+}
+.header_right_li{
+    /* padding-left: 20px; */
+    cursor: pointer;
+}
+
+
 .nav_title{
     display: flex;
-    font-size: 15px;
+    font-size: 25px;
+}
+.home{
+    position: absolute;
+    float: right;
+    width: 100%;
+    height: 100vh;
+    top:0; 
+    left: 260px;
+}
+.header{
+    position: relative;
+    height: 70px;
+    background-color: cadetblue;
+    font-size: 30px;
+    padding: 20px 20px;
+}
+.form_BC{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+}
+.BC{
+    position: relative;
+    height: auto;
+    width: 79%;
+    margin:25px 25px;
+    background-color: rgba(100, 122, 78, 0.426);
+}
+.box{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 50%;
+    padding: 15px;
+}
+.box_form{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.box_title{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 30%;
+    font-size: 20px;
+    align-content: center;
+    padding-left: 15px;
+    border-bottom: 1px solid black;
+}
+.box_money{
+    display: flex;
+    height: 70%;
+    align-items: center;
+    font-size: 40px;
+    padding-left: 15px;
 }
