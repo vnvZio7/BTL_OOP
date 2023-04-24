@@ -12,12 +12,19 @@ body {
     color: #fff;
     padding: 10px;
   }
-  
+
   nav {
-    background-color: #ddd;
+    background-color: #d0cbcb;
+    padding: 10px;
+    /* border: 2px solid rgb(0, 0, 0); */
+  }
+
+  
+  .nav-link:hover {
+    background-color: #dcb5b5;
+    color: #333;
     padding: 10px;
   }
-  
   section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -79,7 +86,8 @@ body {
     background-color: #343434;
     color: #ffffff;
     text-align: center;
-    border: none;
+    border: none ;
+    border-radius: 20%;
     cursor: pointer;
     transition: all 0.3s ease;
   }
