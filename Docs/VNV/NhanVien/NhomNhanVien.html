@@ -16,7 +16,7 @@
 
             <div class="form">
                 <div class="logo_page">
-                    <a style="height: 80px;" href="quanlySP.html"><img style="position: relative; height: 80px; width: auto;" src="../image/OOP_page.png" alt="Trang chủ"></a>
+                    <a style="height: 80px;" href="../QLSP/quanlySP.html"><img style="position: relative; height: 80px; width: auto;" src="../image/OOP_page.png" alt="Trang chủ"></a>
                     <div style="height: 100%; width: 100%;">
                         <a href="quanlySP.html"><p class="name" >Tên Cửa Hàng</p></a>    
                     </div>
@@ -45,7 +45,7 @@
             <div class="form_NNV">
                 <div class="nav_NNV">
                     <div class="find_NNV" style="display: flex;width: 100%;">
-                        <input class="input_find" style="width: 70%;padding-left: 15px;" type="text" name="find" id="find" >
+                        <input class="input_find" style="width: 70%;padding: 15px;" type="text" name="find" id="find" placeholder="Nhập tên để tìm kiếm">
                         <span class="title_find_NNV"><span style="opacity: 0.7;">Tìm kiếm theo tên</span></span>
                         <input class="button_find_NNV" type="submit" value="Tìm Kiếm">
                     </div>
@@ -54,10 +54,37 @@
                         <button class="button_insert" value="Thêm Mới"><i class="fa-solid fa-circle-plus"></i> Thêm Mới </button>
                     </div>
                 </div>
-            </div>
-            <div style="padding: 20px;"></div>
-            <div>
-                
+                <div style="padding: 20px;"></div>
+                <div class="form_List_NNV">
+                    <table style=" width: 100%;text-align: left;padding: 15px;">
+                        <thead>
+                           <tr>
+                                <th style="width: 5%;"><input type="checkbox" name="chackbox_list_NNV" id="checkbox_list_NNV"></th>
+                                <th style="width: 5%;">#</th>
+                                <th style="width: 20%;">Tên Đăng Nhập</th>
+                                <th style="width: 25%;">Email</th>
+                                <th style="width: 25%;">Tên Nhân Viên</th>
+                                <th style="width: 20%;text-align: right;">Thao Tác</th> 
+                           </tr>   
+                        </thead>
+                        <tbody >
+                            <tr>
+                                <td style="width: 10%;"><input type="checkbox" name="chackbox_NNV" id="checkbox_NNV"></td>
+                                <td style="width: 10%;">1</td>
+                                <td>Quản Lý</td>
+                                <td>Nhân Viên</td>
+                                <td style="width: 10%;"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10%;"><input type="checkbox" name="chackbox_NNV" id="checkbox_NNV"></td>
+                                <td style="width: 10%;">1</td>
+                                <td>Quản Lý</td>
+                                <td>Nhân Viên</td>
+                                <td style="width: 10%;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

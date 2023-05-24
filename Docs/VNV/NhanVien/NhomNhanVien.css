@@ -38,7 +38,8 @@
     background-color: rgb(112, 210, 213);
     color: white;
     padding-left: 15px;
-    font-size: 20px;
+    font-size: 16px;
+    border-radius: 5px;
 }
 .button_find_NNV:hover{
     background-color: rgb(224, 65, 65);
@@ -60,3 +61,15 @@
     background-color: rgb(226, 54, 54);
     border: 2px solid black;
 }
+.form_List_NNV{
+    position: relative;
+    display: flex;
+    /* width: 100%; */
+    height: auto;
+    background-color: burlywood;
+}
+.title_form_List{
+    position: relative;
+    height: 50px;
+}
+
