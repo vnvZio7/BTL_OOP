@@ -46,7 +46,20 @@ public class ProductController {
             return "ThemSP";
         }
     }
-	
+	@PostMapping("/find")
+    public String findProduct(@RequestParam("find") String find, Model model) {
+
+        model.addAttribute("products", productService.findByTenSP(find));
+        return "index";
+    }
+	public List<ProductDTO> dtos = new ArrayList<>();
+	@PostMapping("/findByMaSP")
+    public String findProductByMaSP( @RequestParam("find") String find, Model model) {
+		dtos.add(productService.findByMaSP(find));
+        model.addAttribute("products", dtos);
+        model.addAttribute("ThanhTien", productService.thanhtien(dtos));
+        return "BanHang";
+    }
 
 	@GetMapping("/BanHang.html") 
 	public String BanHang() {
@@ -68,7 +81,25 @@ public class ProductController {
     }
 
 	
-	
+	@GetMapping("/edit/{maSP}")
+	public String update(@PathVariable String maSP, Model model) {
+		model.addAttribute("productOld", productService.findByMaSP(maSP));
+		model.addAttribute("product", new ProductDTO());
+		return "update";
+	}
+	@PostMapping("/update/{maSP}")
+    public String updateProduct(@PathVariable String maSP,
+    		@RequestParam("maSP") String MASP,	
+    		@RequestParam("tenSP") String tenSP,	
+    		@RequestParam("dvt") String DVT,	
+    		@RequestParam("nuocSX") String NUOCSX,	
+    		@RequestParam("gia") double GIA,	
+			Model model) {
+		productService.delete(maSP);
+		ProductDTO productDTO = new ProductDTO(MASP, tenSP, DVT, NUOCSX, GIA);
+        productDTO = productService.save(productDTO);
+		return "redirect:/index.html";
+    }
 	
 	
 	

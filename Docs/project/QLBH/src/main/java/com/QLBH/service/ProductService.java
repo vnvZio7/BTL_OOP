@@ -48,7 +48,17 @@ public class ProductService {
 //		productRepository.deleteByMaSP(maSP);
 	}
 	
-
+	public List<ProductEntity> findByTenSP(String tenSP){
+		List<ProductEntity> entitys = productRepository.findAll();
+		List<ProductEntity> products = new ArrayList<>();
+		
+		for(ProductEntity entity : entitys) {
+			if(entity.getTenSP().equals(tenSP)) {
+				products.add(entity);
+			}
+		}
+		return products;
+	}
 	public ProductDTO findByMaSP(String maSP){
 		List<ProductEntity> entitys = productRepository.findAll();
 		for(ProductEntity entity : entitys) {
@@ -58,7 +68,31 @@ public class ProductService {
 		}
 		return null;
 	}
-}
-	
+//	public List<OrderDetailEntity> findAllByMaSP(String maSP){
+//		List<OrderDetailEntity > entitys = orderDetailRepository.findAll();
+//		for(OrderDetailEntity entity : entitys) {
+//			if(entity.getMaSP().equals(maSP)) {
+//				return productConverter.toDTO(entity);
+//			}
+//		}
+//		return null;
+//	}
+	public ProductDTO update(String maSP,ProductDTO productDTO) {
+		ProductEntity entityOld = productConverter.toEntity(findByMaSP(maSP));
+//		List<OrderDetailEntity> orderDetailEntities = orderDetailRepository.findAllByMaSP(maSP);
+//		entityOld.setOrderDetails(orderDetailEntities);
+		entityOld =  productConverter.toEntity(productDTO, entityOld);
+		entityOld = productRepository.save(entityOld);
+		return productConverter.toDTO(entityOld);
+		
+	}
+	public double thanhtien(List<ProductDTO> dtos) {
+		double sum = 0; 
+		for(ProductDTO dto : dtos) {
+			sum+=dto.getGia();
+		}
+		return sum;
+	}
 
+}
 
