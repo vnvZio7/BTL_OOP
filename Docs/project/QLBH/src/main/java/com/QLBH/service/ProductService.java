@@ -25,61 +25,40 @@ public class ProductService {
 	private OrderRepository orderRepository;
 	@Autowired
 	private ProductConverter productConverter;
-
-	public List<ProductEntity> listAll() {
+	public List<ProductEntity> listAll(){
 		return productRepository.findAll();
 	}
 
+	public ProductDTO save(ProductDTO productDTO) {
+
+		ProductEntity productEntity = productConverter.toEntity(productDTO);
+		productEntity = productRepository.save(productEntity);
+		return productConverter.toDTO(productEntity);
+	}
 	public void deleteByMaSP(String maSP) {
 		List<ProductEntity> entitys = productRepository.findAll();
-		for (ProductEntity entity : entitys) {
-			if (entity.getMaSP().equals(maSP)) {
+		for(ProductEntity entity : entitys) {
+			if(entity.getMaSP().equals(maSP)) {
 				productRepository.delete(entity);
 			}
 		}
 	}
-
 	public void delete(String maSP) {
 		deleteByMaSP(maSP);
-		// productRepository.deleteByMaSP(maSP);
+//		productRepository.deleteByMaSP(maSP);
 	}
+	
 
-	public ProductDTO findByMaSP(String maSP) {
+	public ProductDTO findByMaSP(String maSP){
 		List<ProductEntity> entitys = productRepository.findAll();
-		for (ProductEntity entity : entitys) {
-			if (entity.getMaSP().equals(maSP)) {
+		for(ProductEntity entity : entitys) {
+			if(entity.getMaSP().equals(maSP)) {
 				return productConverter.toDTO(entity);
 			}
 		}
 		return null;
 	}
-
-	// public List<OrderDetailEntity> findAllByMaSP(String maSP){
-	// List<OrderDetailEntity > entitys = orderDetailRepository.findAll();
-	// for(OrderDetailEntity entity : entitys) {
-	// if(entity.getMaSP().equals(maSP)) {
-	// return productConverter.toDTO(entity);
-	// }
-	// }
-	// return null;
-	// }
-	public ProductDTO update(String maSP, ProductDTO productDTO) {
-		ProductEntity entityOld = productConverter.toEntity(findByMaSP(maSP));
-		// List<OrderDetailEntity> orderDetailEntities =
-		// orderDetailRepository.findAllByMaSP(maSP);
-		// entityOld.setOrderDetails(orderDetailEntities);
-		entityOld = productConverter.toEntity(productDTO, entityOld);
-		entityOld = productRepository.save(entityOld);
-		return productConverter.toDTO(entityOld);
-
-	}
-
-	public double thanhtien(List<ProductDTO> dtos) {
-		double sum = 0;
-		for (ProductDTO dto : dtos) {
-			sum += dto.getGia();
-		}
-		return sum;
-	}
-
 }
+	
+
+
