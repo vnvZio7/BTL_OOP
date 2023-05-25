@@ -2,11 +2,13 @@ package com.QLBH.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
 public class UserEntity {
+	@Id
 	@Column(name = "TENND")
 	private String username;
 	
@@ -39,7 +41,9 @@ public class UserEntity {
 	public void setQuyen(String quyen) {
 		this.quyen = quyen;
 	}
-
+	public UserEntity() {
+		
+	}
 	public UserEntity(String username, String password, String quyen) {
 		super();
 		this.username = username;

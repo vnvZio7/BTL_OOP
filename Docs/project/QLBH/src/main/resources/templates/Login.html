@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="icon" type="image/x-icon" href="../image/OOP_page.png">
+    <link rel="stylesheet" href="./css/Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="form">
+        <div class="logo">
+            <div style="display: flex;">
+                <img style="height: 60px; " src="../image/OOP_page.png" alt="logo page">
+            </div>
+            <h1 style="width: 160px; transform: translate(-25%);" >Đăng nhập</h1>
+        </div>
+        <form action="" method="get">
+            <div style="display: flex;">
+                <div class="form_login">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div >
+                    <input  style="font-size: 20px;width: 100%;" type="text" name="name" id="name" placeholder="Tên đăng nhập">
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div class="form_login">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <div>
+                    <input style="font-size: 20px;width: 100%;" type="password" name="pwd" id="pwd" placeholder="password">
+                </div>
+            </div>
+            <button ><a class="DK" th:href="@{QuanlySP.html}">Đăng Nhập</a></button>
+        </form>
+        <div style="position: relative; text-align: center;font-size: 18px;"><div>Bạn chưa có tài khoản?</div></div>
+        <button ><a class="DK" th:href="@{DangkiTK.html}">Đăng kí</a></button>
+        <div style="display: flex;height: 150px;">
+            <img style="position: relative; width: 100%;" src="../image/meme.gif" alt="meme">
+        </div>
+    </div>
+</body>
+</html>

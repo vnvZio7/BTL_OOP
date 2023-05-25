@@ -31,5 +31,47 @@ public class EmployeeEntity {
 	@JsonIgnore
 	@OneToMany(mappedBy = "employeeEntity", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<OrderEntity> orders = new ArrayList<>();
+	public String getMaNV() {
+		return maNV;
+	}
+	public void setMaNV(String maNV) {
+		this.maNV = maNV;
+	}
+	public String getHoten() {
+		return hoten;
+	}
+	public void setHoten(String hoten) {
+		this.hoten = hoten;
+	}
+	public String getSdt() {
+		return sdt;
+	}
+	public void setSdt(String sdt) {
+		this.sdt = sdt;
+	}
+	public Date getNgVL() {
+		return ngVL;
+	}
+	public void setNgVL(Date ngVL) {
+		this.ngVL = ngVL;
+	}
+	public List<OrderEntity> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<OrderEntity> orders) {
+		this.orders = orders;
+	}
+	public EmployeeEntity(String maNV, String hoten, String sdt, Date ngVL, List<OrderEntity> orders) {
+		super();
+		this.maNV = maNV;
+		this.hoten = hoten;
+		this.sdt = sdt;
+		this.ngVL = ngVL;
+		this.orders = orders;
+	}
+	public EmployeeEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 }

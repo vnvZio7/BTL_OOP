@@ -19,10 +19,9 @@ import jakarta.persistence.Table;
 @Table(name = "SANPHAM")
 public class ProductEntity {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MASP")
 	private String maSP;
-	@Column(name = "TENSP")
+	@Column(name = "tensp")
 	private String tenSP;
 	@Column(name = "DVT")
 	private String dvt;
@@ -33,4 +32,54 @@ public class ProductEntity {
 	@JsonIgnore
 	@OneToMany(mappedBy = "productEntity", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<OrderDetailEntity> orderDetails = new ArrayList<>();
+	public String getMaSP() {
+		return maSP;
+	}
+	public void setMaSP(String maSP) {
+		this.maSP = maSP;
+	}
+	public String getTenSP() {
+		return tenSP;
+	}
+	public void setTenSP(String tenSP) {
+		this.tenSP = tenSP;
+	}
+	public String getDvt() {
+		return dvt;
+	}
+	public void setDvt(String dvt) {
+		this.dvt = dvt;
+	}
+	public String getNuocSX() {
+		return nuocSX;
+	}
+	public void setNuocSX(String nuocSX) {
+		this.nuocSX = nuocSX;
+	}
+	public double getGia() {
+		return gia;
+	}
+	public void setGia(double gia) {
+		this.gia = gia;
+	}
+	public List<OrderDetailEntity> getOrderDetails() {
+		return orderDetails;
+	}
+	public void setOrderDetails(List<OrderDetailEntity> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
+	public ProductEntity() {
+		// TODO Auto-generated constructor stub
+	}
+	public ProductEntity(String maSP, String tenSP, String dvt, String nuocSX, double gia,
+			List<OrderDetailEntity> orderDetails) {
+		super();
+		this.maSP = maSP;
+		this.tenSP = tenSP;
+		this.dvt = dvt;
+		this.nuocSX = nuocSX;
+		this.gia = gia;
+		this.orderDetails = orderDetails;
+	}
+	
 }

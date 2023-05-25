@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danh sách sản phẩm</title>
+<link rel="icon" type="image/x-icon" href="../image/OOP_page.png">
+<link rel="stylesheet" href="./css/BanHang.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://kit.fontawesome.com/a076d05399.js"
+	crossorigin="anonymous"></script>
+<style>
+* {
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style-type: none;
+	color: black;
+}
+
+.main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translate(0);
+	width: 100%;
+	height: 100%;
+}
+
+.logo_page {
+	display: flex;
+}
+
+.toolbar {
+	position: relative;
+	background-color: rgb(225, 218, 208);
+	height: 100vh;
+	width: 260px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.form_toolbar {
+	position: relative;
+	height: 100vh;
+}
+
+.header_right_li:hover {
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: azure;
+}
+
+.header_right_li {
+	height: 8%;
+	margin-right: 15%;
+	align-items: center;
+	padding-left: 10px;
+	border-bottom: 2px solid grey;
+	border-right: 2px solid grey;
+	border-radius: 5px;
+	margin-top: 15px;
+	box-shadow: 5px 5px 5px moccasin;
+	cursor: pointer;
+	display: flex;
+	font-size: 25px;
+}
+
+.home {
+	position: absolute;
+	float: right;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 260px;
+}
+
+.header {
+	position: relative;
+	display: flex;
+	width: 82.4%;
+	height: 70px;
+	background-color: cadetblue;
+	font-size: 30px;
+	padding: 20px 20px;
+}
+</style>
+</head>
+<body>
+	<div class="main" style="overflow-y :auto;">
+		<div class="toolbar">
+
+			<div class="form">
+				<div class="logo_page">
+					<a style="height: 80px;" href="quanlySP.html"><img
+						style="position: relative; height: 80px; width: auto;"
+						src="../image/OOP_page.png" alt="Trang chủ"></a>
+					<div style="height: 100%; width: 100%;">
+						<a href="quanlySP.html"><p class="name">Tên Cửa Hàng</p></a>
+					</div>
+				</div>
+
+				<div class="form_toolbar">
+					<ul style="display: inline-block; width: 100%; height: 100%;">
+						<li class="header_right_li"><a style="font-size: 18px;"
+							href=""> BÁN HÀNG </a></li>
+						<li class="header_right_li"><a style="font-size: 18px;"
+							href=""> SẢN PHẨM </a></li>
+						<li class="header_right_li"><a style="font-size: 18px;"
+							href=""> QUẢN LÝ KHO </a></li>
+						<li class="header_right_li"><a style="font-size: 18px;"
+							href=""> QUẢN LÝ THU CHI </a></li>
+						<li class="header_right_li"><a style="font-size: 18px;"
+							href=""> BÁO CÁO </a></li>
+						<li class="header_right_li"><a style="font-size: 18px;"
+							href=""> NHÂN VIÊN </a></li>
+						<li class="header_right_li"><a style="font-size: 18px;"
+							href=""> THIẾT LẬP </a></li>
+						<li class="header_right_li"><a style="font-size: 18px;"
+							href=""> TÀI KHOẢN </a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="home">
+			<div class="header">Danh sách sản phẩm</div>
+			<div class="form_NNV">
+				<div class="nav_NNV">
+					<div class="find_NNV" style="display: flex; width: 100%;">
+					<form action="#" th:action="@{/find}"  method="post" style="display:inherit;">
+						<input class="input_find" style="width: 70%; padding: 15px;"
+							type="text" name="find" id="find"
+							placeholder="Nhập tên để tìm kiếm"> <span
+							class="title_find_NNV"><span style="opacity: 0.7;">Tìm
+								kiếm theo tên</span></span> <input class="button_find_NNV" type="submit"
+							value="Tìm Kiếm"></form>
+					</div>
+
+				</div>
+			</div>
+			<table style="display: inline ;">
+                <tr>
+                    <th style="width: 150px;">Mã sản phẩm </th>
+                    <th style="width: 150px;">Tên Sản Phẩm</th>
+                    <th style="width: 150px;">Đơn vị tính </th>
+                    <th style="width: 150px;">Nước sản xuất</th>
+                    <th style="width: 150px;">Giá</th>
+                </tr>
+                <tr th:each = "product : ${products}">
+                    <td th:text = "${product.maSP}"></td>
+                    <td th:text = "${product.tenSP}"></td>
+                    <td th:text = "${product.dvt}"></td>
+                    <td th:text = "${product.nuocSX}"></td>
+                    <td th:text = "${product.gia}"></td>
+                    <td><a th:href="@{/edit/{maSP}(maSP = ${product.getMaSP()})}"><button>Sửa</button></a></td>
+                    <td><a th:href="@{/delete/{maSP} (maSP = ${product.getMaSP()})}"><button> Xóa</button></a></td>
+                </tr>
+                
+            </table>
+            <a th:href = "@{/add}"><button>Thêm sản phẩm</button></a>
+		</div>
+	</div>
+
+</body>
+</html>

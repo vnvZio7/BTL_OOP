@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sửa sản phẩm</title>
+    <link rel="icon" type="image/x-icon" href="../image/OOP_page.png">
+    <link rel="stylesheet" href="/css/update.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        label{
+            
+            font-size: 20px;
+        }
+        .form_input input{
+            height: 30px;
+            width: 90%;
+        }
+        .form_input{
+            padding-top: 15px;
+            padding-left: 30%;
+            width: 70%;
+        }
+        .button_SP{
+            margin : 25px 40%;
+            display: inline-flex;
+            width: 100px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="toolbar">
+
+            <div class="form">
+                <div class="logo_page">
+                    <a style="height: 80px;" href="../QLSP/quanlySP.html"><img style="position: relative; height: 80px; width: auto;" src="../image/OOP_page.png" alt="Trang chủ"></a>
+                    <div style="height: 100%; width: 100%;">
+                        <a href="quanlySP.html"><p class="name" >Tên Cửa Hàng</p></a>    
+                    </div>
+                </div>
+                
+                <div class="form_toolbar">
+                        <ul style="display: inline-block; width: 100%;height: 100%;" >
+                            <li class="header_right_li"><a style="font-size: 18px;" href=""> BÁN HÀNG        </a></li>
+                            <li class="header_right_li"><a style="font-size: 18px;" href=""> SẢN PHẨM        </a></li>
+                            <li class="header_right_li"><a style="font-size: 18px;" href=""> QUẢN LÝ KHO     </a></li>
+                            <li class="header_right_li"><a style="font-size: 18px;" href=""> QUẢN LÝ THU CHI </a></li>
+                            <li class="header_right_li"><a style="font-size: 18px;" href=""> BÁO CÁO         </a></li>
+                            <li class="header_right_li"><a style="font-size: 18px;" href=""> NHÂN VIÊN       </a></li>
+                            <li class="header_right_li"><a style="font-size: 18px;" href=""> THIẾT LẬP       </a></li>
+                            <li class="header_right_li"><a style="font-size: 18px;" href=""> TÀI KHOẢN       </a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="home">
+            <div class="header">
+                Cập Nhật Sản Phẩm
+            </div>
+            <div class="form_NNV" style="position: relative;">
+               <form action="#" th:action="@{/update/{maSP}(maSP = ${productOld.getMaSP()})}" th:object="${product}" method="post" >
+                    <div class="form_input">
+                        <div>
+                            <label> Mã sản phẩm :</label>
+                            <input type="text" id="maSP" name="maSP" th:value ="${productOld.maSP}"><br/>
+                        </div>
+                    </div>
+                    <div class="form_input">
+                        <div> <label> Tên sản phẩm :</label> </div>
+                        <input type="text" id="tenSP" name="tenSP" th:value ="${productOld.tenSP}"><br/>
+                    </div>
+                    <div class="form_input">
+                        <div><label> Đơn vị tính :</label></div>
+                        <input type="text" id="dvt" name="dvt" th:value ="${productOld.dvt}"><br/>
+                    </div>
+                    <div class="form_input">
+                        <div><label> Nước sản xuất :</label></div>
+                        <input type="text" id="nuocSX" name="nuocSX" th:value ="${productOld.nuocSX}"><br/>
+                    </div>
+                    <div class="form_input">
+                        <div><label> Giá :</label></div>
+                        <input type="text" id="gia" name="gia" th:value ="${productOld.gia}"><br/>
+                    </div>
+                    <div class="button_SP">
+                        <input style="width: 100px; height: 30px;" type="submit" value="Cập nhật">
+
+                        <a  href=""><button style="width: 50px; height: 30px;margin-left: 100px;">Hủy</button></a>
+                    </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

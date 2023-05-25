@@ -18,10 +18,48 @@ public class OrderDetailEntity {
 	@Column(name = "SOHD")
 	private int soHD;
 	@Column(name = "SL")
-	private int tenSP;
+	private int SL;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MASP")
     private ProductEntity productEntity;
+
+	public int getSoHD() {
+		return soHD;
+	}
+
+	public void setSoHD(int soHD) {
+		this.soHD = soHD;
+	}
+
+	public int getSL() {
+		return SL;
+	}
+
+	public void setSL(int sL) {
+		SL = sL;
+	}
+
+	public ProductEntity getProductEntity() {
+		return productEntity;
+	}
+
+	public void setProductEntity(ProductEntity productEntity) {
+		this.productEntity = productEntity;
+	}
+
+	public OrderDetailEntity(int soHD, int sL, ProductEntity productEntity) {
+		super();
+		this.soHD = soHD;
+		SL = sL;
+		this.productEntity = productEntity;
+	}
+
+	public OrderDetailEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
 	
 }
