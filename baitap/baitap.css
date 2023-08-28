@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing : border-box;
+    text-decoration: none;
+    color: black;
+}
+.container{
+    margin: 15px 20px;
+    width: 500px;
+    height: auto;
+    border: 1px solid #333;
+    border-bottom-right-radius: 15px;
+}
+.container div{
+    padding: 10px;
+}
+.box a p{
+    font-size: 18px;
+    font-weight: bold; 
+}
+.box{
+    background-color: pink;
+}
+.img{
+    width: 100%;
+}
+li{
+    font-size: 17px;
+    padding-top: 8px;
+}
+
+ul{
+    padding-left: 20px;
+    margin: 20px 0;
+}
